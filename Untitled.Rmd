@@ -1,0 +1,55 @@
+---
+title: "Untitled"
+author: "Zaid Sameer"
+date: '2018-11-19'
+output: html_document
+---
+```{r}
+dll_data = read.csv("http://datadryad.org/bitstream/handle/10255/dryad.8377/dll.csv", header=TRUE)
+dll_data <- na.omit(dll_data)
+
+dll_data_subset <- dll_data[sample(nrow(dll_data), 300, replace = F),]
+
+
+plot(femur ~ tibia,
+     data = dll_data_subset)
+
+plot(femur ~ tibia,
+     pch = 20, # symbol
+     cex = 1.2, # size of symbol
+     col = "tomato", # symbol colour
+     xlim = c(0.40, 0.57),
+     ylim = c(0.42, 0.62),
+     xlab = " tibia length",
+     ylab = "femur length",
+     main = "leg lengths measures",
+     bty="n",
+     data = dll_data)
+
+you can play beach volleyball with your new friends
+str(dll_data)
+jitter
+Confidence interval
+
+# 7 17 modeling simulating
+deterministic bs stochastic
+
+
+Wa
+WA
+P_a_t0
+P_A_t0
+P_a_t1
+P_A_t1
+```
+
+
+
+```{r}
+pp_t1 <- function(w_A, w_a, p_t0) {
+w_bar <- (p_t0*w_A) + ((1-p_t0)*w_a)
+p_t1 <- (w_A*p_t0)/w_bar
+return(p_t1)
+}
+
+pp_t1(w_A=1.1, w_a=1.0, p_t0=0.5)
